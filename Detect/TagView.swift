@@ -33,6 +33,6 @@ class TagView: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func backIsPressed(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
 }
