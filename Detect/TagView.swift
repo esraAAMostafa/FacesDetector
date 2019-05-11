@@ -9,12 +9,20 @@
 import UIKit
 
 class TagView: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var Image: UIImageView!
+
+    @IBOutlet weak var image: UIImageView!
     var textField: UITextField!
+    
+    var tagedPic: TagedFace = TagedFace()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        drawTagText(100, 100)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        image.image = self.tagedPic.image ?? #imageLiteral(resourceName: "ic_image_place-holder")
+        textField.text = self.tagedPic.name ?? ""
     }
 
     func drawTagText(_ x: Double, _ y: Double) {

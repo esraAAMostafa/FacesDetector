@@ -10,31 +10,22 @@ import UIKit
 
 class MainView: UIViewController {
 
-    var pickedImageBlock: ((UIImage) -> Void)?
+    var choicenImage: UIImage!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    //        openGallery()
-}
-
-extension MainView: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            let myPickerController = UIImagePickerController()
-            myPickerController.delegate = self
-            myPickerController.sourceType = .photoLibrary
-            present(myPickerController, animated: true, completion: nil)
+    @IBAction func galleryIsPressed(_ sender: UIButton) {
+        ImagePickerHelper.shared.openGallery(vc: self)
+        ImagePickerHelper.shared.pickedImageBlock = { (image) in
+            self.choicenImage = image
+            self.performSegue(withIdentifier: "ToTageImage", sender: self)
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.pickedImageBlock?(image)
-        } else {
-            print("some thing went wrong")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToTageImage" {
+            if let vc = segue.destination as? TagView {
+                vc.tagedPic = TagedFace(name: "", image: choicenImage)
+            }
         }
-        self.dismiss(animated: true, completion: { })
     }
 }
-//self.performSegue(withIdentifier: "ToTageImage", sender: self)
+

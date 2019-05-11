@@ -28,7 +28,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="VB0-fx-ZaV" kind="show" id="pLe-pV-wWp"/>
+                                            <action selector="galleryIsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtY-7V-zeh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RW-YT-pGa">
@@ -53,6 +53,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="VB0-fx-ZaV" kind="show" identifier="ToTageImage" id="2sL-VL-JaF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,6 +167,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Obt-dG-Abx"/>
                     </view>
+                    <connections>
+                        <segue destination="VB0-fx-ZaV" kind="show" identifier="ToTageImage" id="ai5-Ko-Dxd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yc-Kp-F7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,7 +225,7 @@
                         <viewLayoutGuide key="safeArea" id="VFM-Li-9q2"/>
                     </view>
                     <connections>
-                        <outlet property="Image" destination="Y3x-6H-uj3" id="Rtj-JV-poZ"/>
+                        <outlet property="image" destination="Y3x-6H-uj3" id="Rtj-JV-poZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjW-eE-oxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,4 +236,7 @@
     <resources>
         <image name="ic_back_button" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ai5-Ko-Dxd"/>
+    </inferredMetricsTieBreakers>
 </document>
