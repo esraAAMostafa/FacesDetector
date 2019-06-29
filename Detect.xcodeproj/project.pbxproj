@@ -16,6 +16,8 @@
 		02E4A4352285B43B00FCEF7F /* FacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4A4342285B43B00FCEF7F /* FacesView.swift */; };
 		02E4A4372285C1BD00FCEF7F /* FaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4A4362285C1BD00FCEF7F /* FaceCell.swift */; };
 		02E4A43B2285D71C00FCEF7F /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4A43A2285D71C00FCEF7F /* ImagePickerHelper.swift */; };
+		02E4A4402287893300FCEF7F /* UserDefultesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4A43F2287893300FCEF7F /* UserDefultesHelper.swift */; };
+		02E4A44422878AA600FCEF7F /* TagedFaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4A44322878AA600FCEF7F /* TagedFaceItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		02E4A4342285B43B00FCEF7F /* FacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacesView.swift; sourceTree = "<group>"; };
 		02E4A4362285C1BD00FCEF7F /* FaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCell.swift; sourceTree = "<group>"; };
 		02E4A43A2285D71C00FCEF7F /* ImagePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
+		02E4A43F2287893300FCEF7F /* UserDefultesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefultesHelper.swift; sourceTree = "<group>"; };
+		02E4A44322878AA600FCEF7F /* TagedFaceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagedFaceItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +67,27 @@
 			isa = PBXGroup;
 			children = (
 				0205C48D22829E6100C5C383 /* AppDelegate.swift */,
-				0205C49122829E6100C5C383 /* Main.storyboard */,
+				02E4A43F2287893300FCEF7F /* UserDefultesHelper.swift */,
 				02E4A43A2285D71C00FCEF7F /* ImagePickerHelper.swift */,
+				0205C49122829E6100C5C383 /* Main.storyboard */,
 				0205C48F22829E6100C5C383 /* MainView.swift */,
 				02E4A4322285B42700FCEF7F /* TagView.swift */,
 				02E4A4342285B43B00FCEF7F /* FacesView.swift */,
 				02E4A4362285C1BD00FCEF7F /* FaceCell.swift */,
-				0205C49422829E6300C5C383 /* Assets.xcassets */,
-				0205C49622829E6300C5C383 /* LaunchScreen.storyboard */,
+				02E4A44322878AA600FCEF7F /* TagedFaceItem.swift */,
 				0205C49922829E6300C5C383 /* Info.plist */,
+				02E4A43E2287886200FCEF7F /* Support Files */,
 			);
 			path = Detect;
+			sourceTree = "<group>";
+		};
+		02E4A43E2287886200FCEF7F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0205C49422829E6300C5C383 /* Assets.xcassets */,
+				0205C49622829E6300C5C383 /* LaunchScreen.storyboard */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +162,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				02E4A4372285C1BD00FCEF7F /* FaceCell.swift in Sources */,
+				02E4A44422878AA600FCEF7F /* TagedFaceItem.swift in Sources */,
 				02E4A43B2285D71C00FCEF7F /* ImagePickerHelper.swift in Sources */,
 				0205C49022829E6100C5C383 /* MainView.swift in Sources */,
 				0205C48E22829E6100C5C383 /* AppDelegate.swift in Sources */,
+				02E4A4402287893300FCEF7F /* UserDefultesHelper.swift in Sources */,
 				02E4A4332285B42700FCEF7F /* TagView.swift in Sources */,
 				02E4A4352285B43B00FCEF7F /* FacesView.swift in Sources */,
 			);

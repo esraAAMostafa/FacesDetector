@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct TagedFace {
-    var name: String?
-    var image: UIImage?
-}
-
 class FacesView: UIViewController {
 
     let arrayOfPersonsName = ["ahmed", "mohmad", "esraa", "loba", "asmaa"]
@@ -24,6 +19,9 @@ class FacesView: UIViewController {
         super.viewDidLoad()
 
         for index in 0..<arrayOfPersonsName.count {
+            arrayOfPersonsImage.map { (image) in
+                
+            }
             tagedFaces.append(TagedFace(name: arrayOfPersonsName[index], image: arrayOfPersonsImage[index]))
         }
     }
