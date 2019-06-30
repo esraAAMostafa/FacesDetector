@@ -21,7 +21,7 @@ class TagView: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        image.image = self.tagedPic.image ?? #imageLiteral(resourceName: "ic_image_place-holder")
+        image.image = self.tagedPic.image?.toImage() ?? #imageLiteral(resourceName: "ic_image_place-holder")
         textField.text = self.tagedPic.name ?? ""
     }
 

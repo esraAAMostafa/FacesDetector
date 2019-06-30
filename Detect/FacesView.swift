@@ -22,19 +22,19 @@ class FacesView: UIViewController {
             arrayOfPersonsImage.map { (image) in
                 
             }
-            tagedFaces.append(TagedFace(name: arrayOfPersonsName[index], image: arrayOfPersonsImage[index]))
+            tagedFaces.append(TagedFace(name: arrayOfPersonsName[index], image: arrayOfPersonsImage[index].toData()))
         }
     }
 
     func openImage(_ indexPath: IndexPath) {
-        choicenImage = tagedFaces[indexPath.row].image ?? #imageLiteral(resourceName: "ic_image_place-holder")
+        choicenImage = tagedFaces[indexPath.row].image?.toImage() ?? #imageLiteral(resourceName: "ic_image_place-holder")
         self.performSegue(withIdentifier: "ToTageImage", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToTageImage" {
             if let vc = segue.destination as? TagView {
-                vc.tagedPic = TagedFace(name: "", image: choicenImage)
+                vc.tagedPic = TagedFace(name: "", image: choicenImage.toData())
             }
         }
     }
@@ -51,7 +51,7 @@ extension FacesView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FaceCell", for: indexPath) as? FaceCell {
-            cell.configure(tagedFaces[indexPath.row].image ?? #imageLiteral(resourceName: "ic_image_place-holder"), tagedFaces[indexPath.row].name ?? "")
+            cell.configure(tagedFaces[indexPath.row].image?.toImage() ?? #imageLiteral(resourceName: "ic_image_place-holder"), tagedFaces[indexPath.row].name ?? "")
             return cell
         }
         return UICollectionViewCell()

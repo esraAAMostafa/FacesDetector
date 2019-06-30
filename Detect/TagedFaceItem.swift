@@ -10,5 +10,5 @@ import Foundation
 
 struct TagedFace: Codable {
     var name: String?
-    var image: URL?
+    var image: Data?
 }

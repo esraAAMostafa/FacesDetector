@@ -23,7 +23,7 @@ class MainView: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToTageImage" {
             if let vc = segue.destination as? TagView {
-                vc.tagedPic = TagedFace(name: "", image: choicenImage)
+                vc.tagedPic = TagedFace(name: "", image: choicenImage.toData())
             }
         }
     }

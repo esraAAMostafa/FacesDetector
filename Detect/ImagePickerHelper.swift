@@ -35,3 +35,15 @@ class ImagePickerHelper: NSObject, UINavigationControllerDelegate, UIImagePicker
         }
     }
 }
+
+extension UIImage {
+    func toData() -> Data? {
+        return self.pngData()
+    }
+}
+
+extension Data {
+    func toImage() -> UIImage? {
+        return UIImage(data: self)
+    }
+}
